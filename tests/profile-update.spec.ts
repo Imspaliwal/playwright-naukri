@@ -10,7 +10,7 @@ const userEmail = process.env.EMAIL as string;
 const userPassword = process.env.PASSWORD as string;
 
 test.skip("Update Naukari Headline", async () => {
-  const browser: Browser = await chromium.launch({ headless: false });
+  const browser: Browser = await chromium.launch({ headless: true });
   const page: Page = await browser.newPage();
 
   const login: Locator = page.getByRole("link", { name: "Login", exact: true });
