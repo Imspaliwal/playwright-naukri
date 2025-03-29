@@ -1,0 +1,14 @@
+{
+  // These setting can be added at userlevel or project level
+  // for user level, type on search bar "settings.json"
+
+  "files.eol": "\r\n",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 5000,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

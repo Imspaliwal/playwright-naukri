@@ -56,7 +56,7 @@ test("Update Naukari Headline", async () => {
   await resumeHeadlineEdit.click();
 
   await resumeHeadlineTextArea.fill(
-    "8+ Years of Software QA experience including Manual & Automation Testing with key skills, Selenium, Core Java, JavaScript, Postman, RestAssured, Automation Frameworks, BDD, Cucumber, SQL, CI/CD, Linux, Jenkins and Docker"
+    "8+ Years of Software QA experience including Manual & Automation Testing with key skills, Selenium, Core Java, JavaScript, Postman, RestAssured, Automation Frameworks, BDD, Cucumber, SQL, CI/CD, Linux, Jenkins and Docker",
   );
 
   await saveProfile.click();
@@ -102,7 +102,7 @@ test.only("Update Naukari Resume", async () => {
   await page.waitForTimeout(5000);
 
   const resumeFile = path.join(
-    process.cwd() + "/tests/Sumit_Paliwal_Resume.pdf"
+    process.cwd() + "/tests/Sumit_Paliwal_Resume.pdf",
   );
 
   // Use fileChooser in case of Input[type='file'] tag is not present in DOM
