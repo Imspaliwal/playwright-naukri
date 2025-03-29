@@ -9,7 +9,7 @@ const loginURL = process.env.LOGIN_URL as string;
 const userEmail = process.env.EMAIL as string;
 const userPassword = process.env.PASSWORD as string;
 
-test("Update Naukari Headline", async () => {
+test.skip("Update Naukari Headline", async () => {
   const browser: Browser = await chromium.launch({ headless: false });
   const page: Page = await browser.newPage();
 
@@ -66,7 +66,7 @@ test("Update Naukari Headline", async () => {
   await browser.close();
 });
 
-test.only("Update Naukari Resume", async () => {
+test("Update Naukari Resume", async () => {
   const browser: Browser = await chromium.launch({ headless: false });
   const page: Page = await browser.newPage();
 
