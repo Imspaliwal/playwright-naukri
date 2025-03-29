@@ -10,7 +10,7 @@ const userEmail = process.env.EMAIL as string;
 const userPassword = process.env.PASSWORD as string;
 
 test.skip("Update Naukari Headline", async () => {
-  const browser: Browser = await chromium.launch({ headless: true });
+  const browser: Browser = await chromium.launch();
   const page: Page = await browser.newPage();
 
   const login: Locator = page.getByRole("link", { name: "Login", exact: true });
@@ -63,11 +63,11 @@ test.skip("Update Naukari Headline", async () => {
 
   await expect(successMsg).toBeVisible();
 
-  await browser.close();
+  // await browser.close();
 });
 
 test("Update Naukari Resume", async () => {
-  const browser: Browser = await chromium.launch({ headless: false });
+  const browser: Browser = await chromium.launch();
   const page: Page = await browser.newPage();
 
   const login: Locator = page.getByRole("link", { name: "Login", exact: true });
