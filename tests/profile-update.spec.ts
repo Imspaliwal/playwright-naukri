@@ -102,7 +102,7 @@ test("Update Naukari Resume", async () => {
   await page.waitForTimeout(5000);
 
   const resumeFile = path.join(
-    process.cwd() + "/tests/Sumit_Paliwal_Resume.pdf",
+    process.cwd() + "/tests/Sumit_Paliwal_Resume_2025.pdf",
   );
 
   // Use fileChooser in case of Input[type='file'] tag is not present in DOM
