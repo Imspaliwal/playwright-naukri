@@ -9,62 +9,62 @@ const loginURL = process.env.LOGIN_URL as string;
 const userEmail = process.env.EMAIL as string;
 const userPassword = process.env.PASSWORD as string;
 
-test.skip("Update Naukari Headline", async () => {
-  const browser: Browser = await chromium.launch();
-  const page: Page = await browser.newPage();
+// test.skip("Update Naukari Headline", async () => {
+//   const browser: Browser = await chromium.launch();
+//   const page: Page = await browser.newPage();
 
-  const login: Locator = page.getByRole("link", { name: "Login", exact: true });
-  const email: Locator = page.getByRole("textbox", {
-    name: "Enter your active Email ID /",
-  });
-  const passowrd: Locator = page.getByRole("textbox", {
-    name: "Enter your password",
-  });
-  const submit: Locator = page.getByRole("button", {
-    name: "Login",
-    exact: true,
-  });
+//   const login: Locator = page.getByRole("link", { name: "Login", exact: true });
+//   const email: Locator = page.getByRole("textbox", {
+//     name: "Enter your active Email ID /",
+//   });
+//   const passowrd: Locator = page.getByRole("textbox", {
+//     name: "Enter your password",
+//   });
+//   const submit: Locator = page.getByRole("button", {
+//     name: "Login",
+//     exact: true,
+//   });
 
-  const viewProfile: Locator = page.getByRole("link", { name: "View profile" });
-  const resumeHeadline: Locator = page
-    .getByRole("listitem")
-    .filter({ hasText: "Resume headline" })
-    .locator("span");
-  const resumeHeadlineEdit: Locator = page
-    .locator("#lazyResumeHead")
-    .getByText("editOneTheme");
-  const resumeHeadlineTextArea: Locator = page.getByRole("textbox", {
-    name: "Minimum 5 words. Sample",
-  });
+//   const viewProfile: Locator = page.getByRole("link", { name: "View profile" });
+//   const resumeHeadline: Locator = page
+//     .getByRole("listitem")
+//     .filter({ hasText: "Resume headline" })
+//     .locator("span");
+//   const resumeHeadlineEdit: Locator = page
+//     .locator("#lazyResumeHead")
+//     .getByText("editOneTheme");
+//   const resumeHeadlineTextArea: Locator = page.getByRole("textbox", {
+//     name: "Minimum 5 words. Sample",
+//   });
 
-  const saveProfile: Locator = page.getByRole("button", { name: "Save" });
+//   const saveProfile: Locator = page.getByRole("button", { name: "Save" });
 
-  const successMsg: Locator = page.getByText("Success", { exact: true });
+//   const successMsg: Locator = page.getByText("Success", { exact: true });
 
-  await page.goto(loginURL);
-  await login.click();
+//   await page.goto(loginURL);
+//   await login.click();
 
-  await email.fill(userEmail);
-  await passowrd.fill(userPassword);
-  await submit.click();
+//   await email.fill(userEmail);
+//   await passowrd.fill(userPassword);
+//   await submit.click();
 
-  await viewProfile.click();
-  // await page.locator('[id="_ux73u25gy2"]').click();
-  await resumeHeadline.click();
-  await page.waitForTimeout(5000);
-  await resumeHeadline.click();
-  await resumeHeadlineEdit.click();
+//   await viewProfile.click();
+//   // await page.locator('[id="_ux73u25gy2"]').click();
+//   await resumeHeadline.click();
+//   await page.waitForTimeout(5000);
+//   await resumeHeadline.click();
+//   await resumeHeadlineEdit.click();
 
-  await resumeHeadlineTextArea.fill(
-    "8+ Years of Software QA experience including Manual & Automation Testing with key skills, Selenium, Core Java, JavaScript, Postman, RestAssured, Automation Frameworks, BDD, Cucumber, SQL, CI/CD, Linux, Jenkins and Docker",
-  );
+//   await resumeHeadlineTextArea.fill(
+//     "8+ Years of Software QA experience including Manual & Automation Testing with key skills, Selenium, Core Java, JavaScript, Postman, RestAssured, Automation Frameworks, BDD, Cucumber, SQL, CI/CD, Linux, Jenkins and Docker",
+//   );
 
-  await saveProfile.click();
+//   await saveProfile.click();
 
-  await expect(successMsg).toBeVisible();
+//   await expect(successMsg).toBeVisible();
 
-  // await browser.close();
-});
+//   // await browser.close();
+// });
 
 test("Update Naukari Resume", async () => {
   const browser: Browser = await chromium.launch();
